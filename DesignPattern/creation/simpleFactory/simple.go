@@ -5,6 +5,10 @@ import (
 )
 
 //简单工厂模式
+//go语言没有构造函数一说，所以一般会定义NewXXX函数来初始化相关类
+//NewXXX函数返回接口时就是简单工厂模式，也就是说Golang的一般推荐就是简单工厂
+//在这个simpleFactory包中只有API接口和NewAPI函数为包外可见，封装了实现的细节
+
 //API是interface类型
 type API interface {
 	Say(name string) string
